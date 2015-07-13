@@ -1,32 +1,34 @@
 // Base settings for all themes that can optionally be 
 // overridden by the super-theme
 
+$reveal-font-path: "../../lib/font" !default;
+
 // Include theme-specific fonts
 @font-face {
 	font-family: "Gotham";
 	src: local("Gotham"),
-	url("fonts/Gotham/Gotham-Medium.otf") format("opentype");
+	url("#{$reveal-font-path}/Gotham-Medium.otf") format("opentype");
 	font-weight: normal;
 	font-style: normal;
 }
 @font-face {
 	font-family: "Gotham-Book";
 	src: local("Gotham-Book"),
-	url("fonts/Gotham/Gotham-Book.otf") format("opentype");
+	url("#{$reveal-font-path}/Gotham-Book.otf") format("opentype");
 	font-weight: normal;
 	font-style: normal;
 }
 @font-face {
 	font-family: "Gotham-Italic";
 	src: local("Gotham-Italic"),
-	url("fonts/Gotham/Gotham-MediumIta.otf") format("opentype");
+	url("#{$reveal-font-path}/Gotham-MediumIta.otf") format("opentype");
 	font-weight: normal;
 	font-style: italic;
 }
 @font-face {
 	font-family: "Gotham-Bold";
 	src: local("Gotham-Bold"),
-	url("fonts/Gotham/Gotham-Bold.otf") format("opentype");
+	url("#{$reveal-font-path}/Gotham-Bold.otf") format("opentype");
 	font-weight: bold;
 	font-style: bold;
 }
