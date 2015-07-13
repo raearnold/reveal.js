@@ -5,7 +5,8 @@
 var RevealNotes = (function() {
 
 	function openNotes() {
-		var notesPopup = window.open( 'reveal/plugin/notes/notes.html', 'reveal.js - Notes', 'width=1120,height=850' );
+		var notesPopup = window.open( 'reveal/plugin/notes/notes.html', 'reveal.js - Notes', 'width=1120,height=850' ),
+			slidePath = window.location.href.split('#')[0];
 
 		// Fires when slide is changed
 		Reveal.addEventListener( 'slidechanged', function( event ) {
@@ -54,7 +55,9 @@ var RevealNotes = (function() {
 					indexv : indexv,
 					nextindexh : nextindexh,
 					nextindexv : nextindexv,
-					markdown : notes ? typeof notes.getAttribute( 'data-markdown' ) === 'string' : false
+					markdown : notes ? typeof notes.getAttribute( 'data-markdown' ) === 'string' : false,
+					// Ensures proper slides are shown if multiple slideshows || !index.html
+					path : slidePath
 				};
 			}
 			else if( eventType === 'fragmentshown' ) {
@@ -67,7 +70,7 @@ var RevealNotes = (function() {
 					fragment : 'prev'
 				};
 			}
-
+			
 			notesPopup.postMessage( JSON.stringify( messageData ), '*' );
 		}
 
